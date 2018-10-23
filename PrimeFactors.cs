@@ -6,10 +6,13 @@ namespace PrimeFactorsKata
     {
         public static IEnumerable<int> Of(int n)
         {
-            while (n % 2 == 0)
+            for (var candidate = 2; candidate < n; candidate++)
             {
-                yield return 2;
-                n /= 2;
+                while (n % candidate == 0)
+                {
+                    yield return candidate;
+                    n /= candidate;
+                }
             }
 
             if (n > 1)

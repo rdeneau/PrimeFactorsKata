@@ -37,5 +37,13 @@ namespace PrimeFactorsKata
         {
             PrimeFactors.Of(2*2*n).Should().BeEquivalentTo(2, 2, n);
         }
+
+        [Theory]
+        [InlineData(3)]
+        [InlineData(5)]
+        public void Decompose_Single_Multiple_Of_3(int n)
+        {
+            PrimeFactors.Of(3*n).Should().BeEquivalentTo(3, n);
+        }
     }
 }
