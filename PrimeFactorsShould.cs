@@ -16,7 +16,13 @@ namespace PrimeFactorsKata
         [InlineData(3)]
         public void Return_Given_Prime_Number(int n)
         {
-            PrimeFactors.Of(n).Should().ContainInOrder(n);
+            PrimeFactors.Of(n).Should().BeEquivalentTo(n);
+        }
+
+        [Fact]
+        public void Return_2_and_2_Given_4()
+        {
+            PrimeFactors.Of(4).Should().BeEquivalentTo(2, 2);
         }
     }
 }

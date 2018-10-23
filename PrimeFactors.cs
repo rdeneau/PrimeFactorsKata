@@ -6,10 +6,16 @@ namespace PrimeFactorsKata
     {
         public static IEnumerable<int> Of(int n)
         {
-            if (n <= 1)
-                yield break;
+            if (n % 2 == 0)
+            {
+                yield return 2;
+                n /= 2;
+            }
 
-            yield return n;
+            if (n > 1)
+            {
+                yield return n;
+            }
         }
     }
 }
