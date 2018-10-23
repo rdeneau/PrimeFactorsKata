@@ -6,7 +6,7 @@ namespace PrimeFactorsKata
     {
         public static IEnumerable<int> Of(int n)
         {
-            if (n % 2 == 0)
+            while (n % 2 == 0)
             {
                 yield return 2;
                 n /= 2;
