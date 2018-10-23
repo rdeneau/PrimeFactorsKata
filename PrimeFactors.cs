@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 
 namespace PrimeFactorsKata
 {
@@ -7,7 +6,10 @@ namespace PrimeFactorsKata
     {
         public static IEnumerable<int> Of(int n)
         {
-            return Enumerable.Empty<int>();
+            if (n <= 1)
+                yield break;
+
+            yield return 2;
         }
     }
 }
