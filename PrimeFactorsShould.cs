@@ -6,9 +6,9 @@ namespace PrimeFactorsKata
     public class PrimeFactorsShould
     {
         [Fact]
-        public void SmokeTest()
+        public void Return_Empty_Given_One()
         {
-            true.Should().Be(false);
+            PrimeFactors.Of(1).Should().BeEmpty();
         }
     }
 }
