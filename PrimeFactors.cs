@@ -9,7 +9,7 @@ namespace PrimeFactorsKata
             if (n <= 1)
                 yield break;
 
-            yield return 2;
+            yield return n;
         }
     }
 }

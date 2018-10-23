@@ -11,10 +11,12 @@ namespace PrimeFactorsKata
             PrimeFactors.Of(1).Should().BeEmpty();
         }
 
-        [Fact]
-        public void Return_2_Given_2()
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        public void Return_Given_Prime_Number(int n)
         {
-            PrimeFactors.Of(2).Should().ContainInOrder(2);
+            PrimeFactors.Of(n).Should().ContainInOrder(n);
         }
     }
 }
