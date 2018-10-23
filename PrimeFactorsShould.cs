@@ -14,15 +14,19 @@ namespace PrimeFactorsKata
         [Theory]
         [InlineData(2)]
         [InlineData(3)]
+        [InlineData(5)]
         public void Return_Given_Prime_Number(int n)
         {
             PrimeFactors.Of(n).Should().BeEquivalentTo(n);
         }
 
-        [Fact]
-        public void Return_2_and_2_Given_4()
+        [Theory]
+        [InlineData(2)]
+        [InlineData(3)]
+        [InlineData(5)]
+        public void Decompose_Single_Multiple_Of_2(int n)
         {
-            PrimeFactors.Of(4).Should().BeEquivalentTo(2, 2);
+            PrimeFactors.Of(2 * n).Should().BeEquivalentTo(2, n);
         }
     }
 }
