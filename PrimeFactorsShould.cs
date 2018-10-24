@@ -45,5 +45,11 @@ namespace PrimeFactorsKata
         {
             PrimeFactors.Of(3*n).Should().BeEquivalentTo(3, n);
         }
+
+        [Fact]
+        public void Decompose_Big_Number()
+        {
+            PrimeFactors.Of(1_010_021).Should().BeEquivalentTo(17, 19, 53, 59);
+        }
     }
 }

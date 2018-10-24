@@ -6,7 +6,7 @@ namespace PrimeFactorsKata
     {
         public static IEnumerable<int> Of(int n)
         {
-            for (var candidate = 2; candidate < n; candidate++)
+            for (var candidate = 2; n > 1; candidate = NextCandidate(candidate))
             {
                 while (n % candidate == 0)
                 {
@@ -14,11 +14,11 @@ namespace PrimeFactorsKata
                     n /= candidate;
                 }
             }
-
-            if (n > 1)
-            {
-                yield return n;
-            }
         }
+
+        private static int NextCandidate(int candidate) =>
+            candidate == 2
+                ? 3
+                : candidate + 2;
     }
 }
